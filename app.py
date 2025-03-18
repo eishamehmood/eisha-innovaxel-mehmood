@@ -90,7 +90,7 @@ def update_short_url(short_code: str, request: URLRequest, db: Session = Depends
         "updatedAt": url_entry.updated_at
     }
 
-#Delete Short URL
+#Delete Short URL and now adding the commit
 @app.delete("/shorten/{short_code}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_shortened_url(short_code: str, db: Session = Depends(get_db)):
     url_entry = db.query(URL).filter(URL.short_code == short_code).first()
