@@ -101,7 +101,7 @@ def delete_shortened_url(short_code: str, db: Session = Depends(get_db)):
     db.commit()
     return
 
-# Get URL Statistics
+# Get URL Statistics and now adding the commit
 @app.get("/shorten/{short_code}/stats")
 def get_url_stats(short_code: str, db: Session = Depends(get_db)):
     url_entry = db.query(URL).filter(URL.short_code == short_code).first()
