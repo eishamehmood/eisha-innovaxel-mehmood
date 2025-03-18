@@ -50,7 +50,7 @@ def shorten_url(request: URLRequest, db: Session = Depends(get_db)):
         "updatedAt": new_url.updated_at
     }
 
-# Retrieve Original URL
+# Retrieve Original URL add the method to commit
 @app.get("/shorten/{short_code}")
 def get_original_url(short_code: str, db: Session = Depends(get_db)):
     url_entry = db.query(URL).filter(URL.short_code == short_code).first()
