@@ -70,7 +70,7 @@ def get_original_url(short_code: str, db: Session = Depends(get_db)):
         "accessCount": url_entry.access_count
     }
 
-# Update Short URL
+# Update Short URL and now adding the commit
 @app.put("/shorten/{short_code}")
 def update_short_url(short_code: str, request: URLRequest, db: Session = Depends(get_db)):
     url_entry = db.query(URL).filter(URL.short_code == short_code).first()
