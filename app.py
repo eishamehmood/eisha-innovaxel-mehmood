@@ -12,7 +12,7 @@ app = FastAPI()
 # Initialize database tables final commit
 create_tables()
 
-# Dependency to get a database session
+# Dependency to get a database session dtabase file has been committed
 def get_db():
     db = SessionLocal()
     try:
