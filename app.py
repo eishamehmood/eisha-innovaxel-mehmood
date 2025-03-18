@@ -9,7 +9,7 @@ from database import SessionLocal, create_tables, URL  # Import database setup
 
 app = FastAPI()
 
-# Initialize database tables
+# Initialize database tables final commit
 create_tables()
 
 # Dependency to get a database session
