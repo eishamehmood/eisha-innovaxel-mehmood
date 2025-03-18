@@ -28,7 +28,7 @@ class URLRequest(BaseModel):
 def generate_short_code(length=6):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
-# Create Short URL
+# Create Short URL and now adding the commit
 @app.post("/shorten", status_code=status.HTTP_201_CREATED)
 def shorten_url(request: URLRequest, db: Session = Depends(get_db)):
     short_code = generate_short_code()
